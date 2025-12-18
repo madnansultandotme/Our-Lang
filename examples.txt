@@ -1,0 +1,486 @@
+// ============================================================================
+// OUR-LANG V1 - Comprehensive Language Examples
+// ============================================================================
+
+// ============================================================================
+// 1. BASIC VARIABLE DECLARATIONS
+// ============================================================================
+
+kaam variableExamples() {
+    // Declare and initialize number
+    banao age = 25;
+    banao price = 99.99;
+
+    // Declare and initialize strings
+    banao naam = 'Ali';
+    banao greeting = "Assalam-o-Alaikum";
+
+    // Declare and initialize booleans
+    banao isStudent = haan;
+    banao hasLicense = na;
+
+    // Arrays
+    banao numbers = [1, 2, 3, 4, 5];
+    banao names = ['Ali', 'Sara', 'Ahmed'];
+
+    // Objects
+    banao person = { naam: 'Muhammad', umar: 30, city: 'Lahore' };
+
+    dekh(age);
+    dekh(naam);
+    dekh(isStudent);
+}
+
+// ============================================================================
+// 2. ARITHMETIC OPERATIONS
+// ============================================================================
+
+kaam arithmeticOperations() {
+    banao a = 10;
+    banao b = 3;
+
+    // Addition
+    banao sum = a + b;       // 13
+    dekh(sum);
+
+    // Subtraction
+    banao diff = a - b;      // 7
+    dekh(diff);
+
+    // Multiplication
+    banao product = a * b;   // 30
+    dekh(product);
+
+    // Division
+    banao quotient = a / b;  // 3.33...
+    dekh(quotient);
+
+    // Modulus
+    banao remainder = a % b; // 1
+    dekh(remainder);
+}
+
+// ============================================================================
+// 3. COMPARISON OPERATORS
+// ============================================================================
+
+kaam comparisonOperations() {
+    banao x = 10;
+    banao y = 20;
+
+    // Equal to
+    agar (x == y) {
+        dekh('Equal');
+    }
+
+    // Not equal to
+    agar (x != y) {
+        dekh('Not equal');
+    }
+
+    // Less than
+    agar (x < y) {
+        dekh('x is less than y');
+    }
+
+    // Greater than
+    agar (x > y) {
+        dekh('x is greater than y');
+    }
+
+    // Less than or equal
+    agar (x <= y) {
+        dekh('x is <= y');
+    }
+
+    // Greater than or equal
+    agar (x >= y) {
+        dekh('x is >= y');
+    }
+}
+
+// ============================================================================
+// 4. LOGICAL OPERATORS
+// ============================================================================
+
+kaam logicalOperations() {
+    banao a = haan;
+    banao b = na;
+
+    // AND operator
+    agar (a && b) {
+        dekh('Both are true');
+    } warnah {
+        dekh('At least one is false');
+    }
+
+    // OR operator
+    agar (a || b) {
+        dekh('At least one is true');
+    } warnah {
+        dekh('Both are false');
+    }
+
+    // NOT operator
+    agar (!b) {
+        dekh('b is false');
+    }
+}
+
+// ============================================================================
+// 5. IF-ELSE STATEMENTS
+// ============================================================================
+
+kaam ifElseExample() {
+    banao age = 16;
+
+    agar (age >= 18) {
+        dekh('Baray ho gaye ho');
+    } warnah {
+        dekh('Chotay ho abhi');
+    }
+}
+
+kaam gradeCalculator(marks) {
+    agar (marks >= 90) {
+        dekh('Grade A');
+    } warnah {
+        agar (marks >= 80) {
+            dekh('Grade B');
+        } warnah {
+            agar (marks >= 70) {
+                dekh('Grade C');
+            } warnah {
+                dekh('Grade F');
+            }
+        }
+    }
+}
+
+// ============================================================================
+// 6. LOOPS - DAURA
+// ============================================================================
+
+kaam simpleLoop() {
+    banao i = 0;
+    daura (i < 5) {
+        dekh(i);
+        i = i + 1;
+    }
+}
+
+kaam countDown() {
+    banao n = 10;
+    daura (n > 0) {
+        dekh(n);
+        n = n - 1;
+    }
+}
+
+kaam multiplicationTable(num) {
+    banao i = 1;
+    daura (i <= 10) {
+        banao result = num * i;
+        dekh(result);
+        i = i + 1;
+    }
+}
+
+// ============================================================================
+// 7. FUNCTIONS
+// ============================================================================
+
+// Simple function
+kaam square(x) {
+    wapas x * x;
+}
+
+// Function with multiple parameters
+kaam add(a, b) {
+    wapas a + b;
+}
+
+kaam multiply(x, y) {
+    wapas x * y;
+}
+
+// Function with complex logic
+kaam isEven(n) {
+    agar (n % 2 == 0) {
+        wapas haan;
+    } warnah {
+        wapas na;
+    }
+}
+
+kaam factorial(n) {
+    agar (n <= 1) {
+        wapas 1;
+    } warnah {
+        wapas n * factorial(n - 1);
+    }
+}
+
+// ============================================================================
+// 8. FIBONACCI SEQUENCE
+// ============================================================================
+
+kaam fibonacci(n) {
+    banao a = 0;
+    banao b = 1;
+    banao temp;
+
+    daura (n > 0) {
+        dekh(a);
+        temp = a + b;
+        a = b;
+        b = temp;
+        n = n - 1;
+    }
+}
+
+// ============================================================================
+// 9. BUILT-IN FUNCTIONS
+// ============================================================================
+
+kaam builtInFunctions() {
+    // print - dekh
+    dekh('Hello World');
+    dekh(42);
+    dekh(3.14);
+
+    // input - lou
+    banao userInput = lou('Enter your name: ');
+    dekh(userInput);
+
+    // length - nikal
+    banao str = 'Salam';
+    banao length = nikal(str);
+    dekh(length);
+
+    // absolute value - abs
+    banao negNum = -15;
+    banao absValue = abs(negNum);
+    dekh(absValue);
+
+    // square root - sqrt
+    banao sqrtResult = sqrt(16);
+    dekh(sqrtResult);
+
+    // power - pow
+    banao powerResult = pow(2, 8);
+    dekh(powerResult);
+
+    // max - maximum of two
+    banao maxValue = max(10, 20);
+    dekh(maxValue);
+
+    // min - minimum of two
+    banao minValue = min(10, 20);
+    dekh(minValue);
+
+    // round - round to nearest integer
+    banao roundedValue = round(3.7);
+    dekh(roundedValue);
+
+    // random - random number between 0 and 1
+    banao randomNum = random();
+    dekh(randomNum);
+
+    // exit - band
+    // band();
+}
+
+// ============================================================================
+// 10. ARRAYS AND INDEXING
+// ============================================================================
+
+kaam arrayExamples() {
+    banao numbers = [10, 20, 30, 40, 50];
+
+    // Access array elements
+    dekh(numbers[0]);  // 10
+    dekh(numbers[2]);  // 30
+    dekh(numbers[4]);  // 50
+
+    // Array length
+    banao len = nikal(numbers);
+    dekh(len);
+
+    // Loop through array
+    banao i = 0;
+    daura (i < len) {
+        dekh(numbers[i]);
+        i = i + 1;
+    }
+}
+
+// ============================================================================
+// 11. OBJECTS
+// ============================================================================
+
+kaam objectExamples() {
+    banao student = {
+        naam: 'Ahmed',
+        umar: 20,
+        city: 'Karachi'
+    };
+
+    dekh(student);
+
+    banao book = {
+        title: 'Alchemist',
+        author: 'Paulo Coelho',
+        pages: 224
+    };
+
+    dekh(book);
+}
+
+// ============================================================================
+// 12. ASSIGNMENT OPERATORS
+// ============================================================================
+
+kaam assignmentOperators() {
+    banao x = 10;
+
+    // Simple assignment
+    x = 15;
+    dekh(x);
+
+    // Addition assignment
+    x += 5;  // x = x + 5 => 20
+    dekh(x);
+
+    // Subtraction assignment
+    x -= 3;  // x = x - 3 => 17
+    dekh(x);
+
+    // Multiplication assignment
+    x *= 2;  // x = x * 2 => 34
+    dekh(x);
+
+    // Division assignment
+    x /= 2;  // x = x / 2 => 17
+    dekh(x);
+}
+
+// ============================================================================
+// 13. COMPLEX PROGRAMS
+// ============================================================================
+
+kaam sumOfNaturalNumbers(n) {
+    banao sum = 0;
+    banao i = 1;
+
+    daura (i <= n) {
+        sum = sum + i;
+        i = i + 1;
+    }
+
+    wapas sum;
+}
+
+kaam isPrime(num) {
+    agar (num <= 1) {
+        wapas na;
+    }
+
+    banao i = 2;
+    daura (i * i <= num) {
+        agar (num % i == 0) {
+            wapas na;
+        }
+        i = i + 1;
+    }
+
+    wapas haan;
+}
+
+kaam findMaxInArray(arr) {
+    banao max = arr[0];
+    banao i = 1;
+    banao len = nikal(arr);
+
+    daura (i < len) {
+        agar (arr[i] > max) {
+            max = arr[i];
+        }
+        i = i + 1;
+    }
+
+    wapas max;
+}
+
+// ============================================================================
+// 14. COMMENTS
+// ============================================================================
+
+kaam commentExample() {
+    // This is a single-line comment
+    banao x = 10;  // Comments can be inline too
+
+    // Multiple comment lines:
+    // Line 1
+    // Line 2
+    // Line 3
+
+    dekh(x);
+}
+
+// ============================================================================
+// 15. MAIN FUNCTION - Entry Point
+// ============================================================================
+
+kaam main() {
+    dekh('=== Our-Lang V1 Examples ===');
+    dekh('');
+
+    // Run various examples
+    dekh('--- Arithmetic ---');
+    arithmeticOperations();
+
+    dekh('');
+    dekh('--- Simple Loop ---');
+    simpleLoop();
+
+    dekh('');
+    dekh('--- Function Call ---');
+    banao result = square(5);
+    dekh('Square of 5 is:');
+    dekh(result);
+
+    dekh('');
+    dekh('--- Sum ---');
+    banao sum = add(10, 20);
+    dekh('10 + 20 = ');
+    dekh(sum);
+
+    dekh('');
+    dekh('--- Fibonacci ---');
+    dekh('Fibonacci sequence (first 8 numbers):');
+    fibonacci(8);
+
+    dekh('');
+    dekh('--- Prime Check ---');
+    agar (isPrime(17)) {
+        dekh('17 is prime');
+    } warnah {
+        dekh('17 is not prime');
+    }
+
+    dekh('');
+    dekh('--- Sum of 1 to 10 ---');
+    banao totalSum = sumOfNaturalNumbers(10);
+    dekh(totalSum);
+
+    dekh('');
+    dekh('--- Array Max ---');
+    banao arr = [5, 12, 3, 9, 20, 1];
+    banao maximum = findMaxInArray(arr);
+    dekh('Maximum value: ');
+    dekh(maximum);
+
+    dekh('');
+    dekh('=== All Examples Completed ===');
+}

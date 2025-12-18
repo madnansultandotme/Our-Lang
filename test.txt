@@ -1,0 +1,32 @@
+kaam square(x) {
+    wapas x * x;
+}
+
+kaam fibonacci(n) {
+    banao a = 0;
+    banao b = 1;
+    banao temp;
+    daura (n > 0) {
+        dekh(a);
+        temp = a + b;
+        a = b;
+        b = temp;
+        n = n - 1;
+    }
+}
+
+kaam main() {
+    banao n = 5;
+    banao result = square(n);
+    dekh(result);
+
+    agar (n > 0) {
+        banao i = 0;
+        daura (i < n) {
+            dekh(i);
+            i = i + 1;
+        }
+    }
+
+    fibonacci(5);
+}
