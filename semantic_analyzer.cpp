@@ -972,7 +972,7 @@ private:
 
     void analyzeIfStatement(IfStatement* ifStmt) {
         DataType condType = analyzeExpression(ifStmt->condition.get());
-        if (condType != DataType::BOOLEAN && condType != DataType::UNKNOWN) {
+        if (condType != DataType::BOOLEAN && condType != DataType::UNKNOWN && condType != DataType::VOID) {
             errors.push_back("ERROR: If condition must be boolean, got " + dataTypeToString(condType));
         }
 
@@ -993,7 +993,7 @@ private:
 
     void analyzeLoopStatement(LoopStatement* loopStmt) {
         DataType condType = analyzeExpression(loopStmt->condition.get());
-        if (condType != DataType::BOOLEAN && condType != DataType::UNKNOWN) {
+        if (condType != DataType::BOOLEAN && condType != DataType::UNKNOWN && condType != DataType::VOID) {
             errors.push_back("ERROR: Loop condition must be boolean, got " + dataTypeToString(condType));
         }
 
@@ -1092,10 +1092,11 @@ private:
         // Arithmetic operators
         if (binOp->op == "+" || binOp->op == "-" || binOp->op == "*" ||
             binOp->op == "/" || binOp->op == "%") {
-            if (leftType != DataType::NUMBER && leftType != DataType::UNKNOWN) {
+            // Allow void or unknown for recursive function calls
+            if (leftType != DataType::NUMBER && leftType != DataType::UNKNOWN && leftType != DataType::VOID) {
                 errors.push_back("ERROR: Left operand of '" + binOp->op + "' must be number");
             }
-            if (rightType != DataType::NUMBER && rightType != DataType::UNKNOWN) {
+            if (rightType != DataType::NUMBER && rightType != DataType::UNKNOWN && rightType != DataType::VOID) {
                 errors.push_back("ERROR: Right operand of '" + binOp->op + "' must be number");
             }
             return DataType::NUMBER;
